@@ -1,0 +1,73 @@
+<html>
+    <title>Contact me</title>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+ function getData()
+            {
+                var name = document.getElementById("txtName");
+                var email = document.getElementById("txtEmail");
+                var terms = document.getElementById("boxTerms");
+
+                name.style.backgroundColor = "white"
+                email.style.backgroundColor = "white"
+                
+                if(name.value == ""){
+                    name.focus()
+                    name.style.backgroundColor = "indianred"
+                    window.alert("You must enter your name")
+                }
+                
+                else if(email.value == ""){
+                    email.focus()
+                    email.style.backgroundColor = "indianred"
+                    window.alert("You must enter your email")
+                }
+                
+                else if(!terms.checked){
+                    terms.focus()
+                    window.alert("You must accept the terms and conditions")
+                }          
+                
+                else{
+                    window.alert("Request received!")
+                    name.value = ""
+                    email.value = ""
+                    terms.checked = false
+                }
+            }
+</script>
+    <style>
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+    </head>
+    <body style="text-align: center;">
+        <h1><span class="Title">Contact Me!</span></h1>
+        <p></p>
+        <table style="align-self: center;">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="txtName"></td>
+            </tr>
+            <tr>
+                <td>Email Address</td>
+                <td><input type="text" id="txtEmail"></td>
+            </tr>
+            <tr>
+                <td>Accept the terms and conditions?</td>
+                <td><input type="checkbox" id="boxTerms"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="btnSubmit" onClick="getData();" class="btn btn-success">Submit</button></td>
+            </tr>
+        </table>
+        <p><a href="Homepage.html"><span id="links">Go back home</span></a></p>
+        <p><a href="Story.html"><span id="links">My short story</span></a></p>    
+    </body>
+</html>
